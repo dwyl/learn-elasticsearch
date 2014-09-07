@@ -1,7 +1,8 @@
-learn-elasticsearch
-===================
+![elasticsearch logo](http://i.imgur.com/xl1xgjm.png)
 
-Learn how to use ElasticSearch to power a great search experience for your project/product/website.
+
+In the next 30 mins you will learn how to use ElasticSearch
+to power a great search experience for your project/product/website.
 
 ## Why?
 
@@ -21,16 +22,19 @@ It provides a distributed, multitenant-capable **full-text search** engine
 with a RESTful web interface and schema-free JSON documents.
 i.e. *awesomeness in a box*!
 
-## Download & Install
+## How?
+
+### Download & Install
 
 http://www.elasticsearch.org/overview/elkdownloads/
 
 
-## Install (Node Module)
+### Install (Node Module)
 
 ```sh
 npm install elasticsearch --save
 ```
+
 
 
 
