@@ -6,8 +6,8 @@ to power a great search experience for your project/product/website.
 
 ## Why?
 
-For anything more than a basic website, ***people expect*** to be able
-to ***search*** for content, products, etc.
+For anything more than a basic website, ***people expect*** to be
+able to ***search*** through your content (blog posts, recipes, products, reviews, etc.)
 
 You *could* use [**google custom search**](https://www.google.com/cse) to
 provide this functionality and side-step having to run your own cluster
@@ -22,11 +22,39 @@ It provides a distributed, multitenant-capable **full-text search** engine
 with a RESTful web interface and schema-free JSON documents.
 i.e. *awesomeness in a box*!
 
+
+
 ## How?
+
+**Note**: ElasticSearch ***requires Java 7*** :unamused:
 
 ### Download & Install
 
-http://www.elasticsearch.org/overview/elkdownloads/
+#### Mac
+
+```sh
+brew install elasticsearch
+```
+
+To have launchd start elasticsearch at login:
+```
+ln -sfv /usr/local/opt/elasticsearch/*.plist ~/Library/LaunchAgents
+```
+Then to load elasticsearch now:
+```
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist
+```
+Or, if you don't want/need launchctl, you can just run:
+```
+elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+```
+
+- http://stackoverflow.com/questions/22850247/installing-elasticsearch-on-osx-mavericks
+
+#### Manual
+
+- http://www.elasticsearch.org/overview/elkdownloads/
+
 
 
 ### Install (Node Module)
@@ -60,3 +88,15 @@ after careful consideration of Solr.
 There are great [heroku addons](https://addons.heroku.com/?q=elasticsearch)
 (we used [Bonsai](https://addons.heroku.com/bonsai) because they have
 a *free* dev tier) and the quality of the search results is superb.
+
+
+## Troubleshooting
+
+Tried to start elastic search with:
+```
+elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+```
+But got the error:
+```
+Exception in thread "main" java.lang.UnsupportedClassVersionError: org/elasticsearch/bootstrap/Elasticsearch : Unsupported major.minor version 51.0
+```
