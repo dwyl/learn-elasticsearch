@@ -22,13 +22,22 @@ It provides a distributed, multitenant-capable **full-text search** engine
 with a RESTful web interface and schema-free JSON documents.
 i.e. *awesomeness in a box*!
 
-
+> Read more: http://www.elasticsearch.org/overview/elasticsearch/
 
 ## How?
 
 **Note**: ElasticSearch ***requires Java 7*** :unamused:
 
 ### Download & Install
+
+#### Vagrant + Ubuntu
+
+If you aren't using Vagrant, go read my vagrant tutorial *now*:
+https://github.com/nelsonic/learn-vagrant
+
+- Install ElasticSearch on Ubuntu:
+https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-on-an-ubuntu-vps
+
 
 #### Mac
 
@@ -64,13 +73,20 @@ npm install elasticsearch --save
 ```
 
 
+## ElasticSearch Server Status
+
+```
+curl -XGET 'http://localhost:9200/_status'
+```
+see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-status.html
 
 
 
 ## Useful Links
 
 - http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser/
-
+- http://thomasardal.com/running-elasticsearch-on-linux-using-vagrant/
+- http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
 
 
 
@@ -80,6 +96,8 @@ npm install elasticsearch --save
 - Faceted Search: http://en.wikipedia.org/wiki/Faceted_search
 - Solr vs Elasticsearch: http://stackoverflow.com/questions/10213009/solr-vs-elasticsearch
 - More detailed Solr vs ES: http://blog.sematext.com/2012/08/23/solr-vs-elasticsearch-part-1-overview
+- A Clustered Setup: http://mookid.dk/oncode/archives/3518
+- Reverse Port Forwarding: http://stackoverflow.com/questions/16244601/vagrant-reverse-port-forwarding/17012410#17012410
 
 ## History
 
