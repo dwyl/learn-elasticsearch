@@ -24,12 +24,14 @@ i.e. *awesomeness in a box*!
 
 > Read more: http://www.elasticsearch.org/overview/elasticsearch/
 
+
 ## How?
 
 **Note**: ElasticSearch ***requires Java 7*** :unamused:
 
 ### Download & Install
 
+<<<<<<< HEAD
 #### Vagrant + Ubuntu
 
 If you aren't using Vagrant, go read my vagrant tutorial *now*:
@@ -39,6 +41,8 @@ https://github.com/nelsonic/learn-vagrant
 https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-on-an-ubuntu-vps
 
 
+=======
+>>>>>>> 009eca29dc134848216d44c79eacb60733dec080
 #### Mac
 
 ```sh
