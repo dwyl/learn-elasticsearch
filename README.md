@@ -31,7 +31,7 @@ i.e. *awesomeness in a box*!
 
 ### Download & Install
 
-<<<<<<< HEAD
+
 #### Vagrant + Ubuntu
 
 If you aren't using Vagrant, go read my vagrant tutorial *now*:
@@ -41,8 +41,6 @@ https://github.com/nelsonic/learn-vagrant
 https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-on-an-ubuntu-vps
 
 
-=======
->>>>>>> 009eca29dc134848216d44c79eacb60733dec080
 #### Mac
 
 ```sh
@@ -102,6 +100,7 @@ see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indic
 - More detailed Solr vs ES: http://blog.sematext.com/2012/08/23/solr-vs-elasticsearch-part-1-overview
 - A Clustered Setup: http://mookid.dk/oncode/archives/3518
 - Reverse Port Forwarding: http://stackoverflow.com/questions/16244601/vagrant-reverse-port-forwarding/17012410#17012410
+- How HipChat use ElasticSearch for storing messages: https://blog.hipchat.com/category/how-hipchat-works/
 
 ## History
 
