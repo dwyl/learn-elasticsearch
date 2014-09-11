@@ -4,7 +4,8 @@
   "description": "Learn how to use elasticsearch in your node.js project(s)",
   "main": "index.js",
   "scripts": {
-    "test": "tape?"
+    "test": "tape?",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

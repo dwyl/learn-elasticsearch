@@ -14,6 +14,19 @@ provide this functionality and side-step having to run your own cluster
 of search servers...  But I suspect your project/customer wants/needs more
 control over the search experience and that's why you're reading this...
 
+## Why *Not* XYZ Database (that has Full-Text-Search) ?
+
+Simple/Short answer: Pick the ***Best tool for the job***.
+
+In the past I've used MongoDB's full-text-search (and even wrote a
+  [tutorial](https://github.com/ideaq/mongo-search) for it!) I've used
+  [MySQL full-text-search](http://dev.mysql.com/doc/refman/5.0/en/fulltext-search.html)
+  to *reasonable* success (Deal Searcher V.1 @Groupon!) and many of my
+  *Rails* friends swear by
+  [Postgres full-text-search](http://www.postgresql.org/docs/8.3/static/textsearch.html)
+  but none of these databases were designed *from scratch* to provide
+  scalable full-text search. So, if you want search, ***elasticsearch***!
+
 ## What?
 
 Elasticsearch is a search server based on
@@ -27,10 +40,14 @@ i.e. *awesomeness in a box*!
 
 ## How?
 
-**Note**: ElasticSearch ***requires Java 7*** :unamused:
+> http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser
+
+
 
 ### Download & Install
 
+Given that ElasticSearch ***requires Java 7***, I've created a Vagrant box
+to consistently boot ES on any OS (using a VM!)
 
 #### Vagrant + Ubuntu
 
