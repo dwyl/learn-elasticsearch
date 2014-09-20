@@ -13,7 +13,9 @@ apt-get -y install g++ git git-core nodejs
 
 
 ## Open Java ##
-apt-get install -y openjdk-6-jre
+# apt-get install -y openjdk-6-jre
+# see: https://gist.github.com/wingdspur/2026107
+sudo apt-get install openjdk-7-jre-headless -y
 
 # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
 wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
@@ -21,7 +23,8 @@ wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-ke
 echo "deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main" >> /etc/apt/sources.list
 apt-get update && apt-get install -y elasticsearch
 
-/etc/init.d/elasticsearch start
+sudo service elasticsearch start
+#curl http://localhost:9200
 
 SCRIPT
 
