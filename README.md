@@ -41,7 +41,7 @@ i.e. *awesomeness in a box*!
 ## How?
 
 > http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser
-
+> http://www.elasticsearch.org/guide/en/elasticsearch/client/javascript-api/current/quick-start.html
 
 
 ### Download & Install
@@ -83,6 +83,9 @@ elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 
 - http://www.elasticsearch.org/overview/elkdownloads/
 
+```sh
+curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{"user":"kimchy","post_date":"2009-11-15T14:12:12","message" : "trying out Elasticsearch"}'
+```
 
 
 ### Install (Node Module)
@@ -106,7 +109,7 @@ see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indic
 - http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser/
 - http://thomasardal.com/running-elasticsearch-on-linux-using-vagrant/
 - http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
-
+- http://exploringelasticsearch.com/overview.html
 
 
 ## Background Reading
@@ -118,6 +121,8 @@ see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indic
 - A Clustered Setup: http://mookid.dk/oncode/archives/3518
 - Reverse Port Forwarding: http://stackoverflow.com/questions/16244601/vagrant-reverse-port-forwarding/17012410#17012410
 - How HipChat use ElasticSearch for storing messages: https://blog.hipchat.com/category/how-hipchat-works/
+- Decent (but old) tutorial: http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch
+
 
 ## History
 

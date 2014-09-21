@@ -17,11 +17,28 @@ apt-get -y install g++ git git-core nodejs
 # see: https://gist.github.com/wingdspur/2026107
 sudo apt-get install openjdk-7-jre-headless -y
 
-# http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
-wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
+# # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
+# wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
+#
+# echo "deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main" >> /etc/apt/sources.list
+# apt-get update && apt-get install -y elasticsearch
+#
+# sudo service elasticsearch start
+# #curl http://localhost:9200
 
-echo "deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main" >> /etc/apt/sources.list
-apt-get update && apt-get install -y elasticsearch
+### >> https://gist.github.com/wingdspur/2026107
+### Check http://www.elasticsearch.org/download/ for latest version of ElasticSearch and replace wget link below
+
+wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.2.deb
+sudo dpkg -i elasticsearch-1.3.2.deb
+
+curl -L http://github.com/elasticsearch/elasticsearch-servicewrapper/tarball/master | tar -xz
+sudo mkdir -p /usr/local/share/elasticsearch/bin/
+sudo mv *servicewrapper*/service /usr/local/share/elasticsearch/bin/
+rm -Rf *servicewrapper*
+
+sudo /usr/local/share/elasticsearch/bin/service/elasticsearch install
+sudo ln -s `readlink -f /usr/local/share/elasticsearch/bin/service/elasticsearch` /usr/local/bin/rcelasticsearch
 
 sudo service elasticsearch start
 #curl http://localhost:9200
