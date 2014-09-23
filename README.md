@@ -79,7 +79,12 @@ elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 
 - http://stackoverflow.com/questions/22850247/installing-elasticsearch-on-osx-mavericks
 
-#### Manual
+#### Using ElasticSearch on *Any* OS with Vagrant
+
+If you are unfamiliar with vagrant please take a few minutes
+to read: https://github.com/nelsonic/learn-vagrant
+
+
 
 - http://www.elasticsearch.org/overview/elkdownloads/
 
@@ -98,18 +103,25 @@ npm install elasticsearch --save
 ## ElasticSearch Server Status
 
 ```
-curl -XGET 'http://localhost:9200/_status'
+curl -XGET http://localhost:9200
 ```
 see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-status.html
 
 
+# > Pick up here:
+
+- http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch/
+- http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_conventions_used_in_this_book.html
+
 
 ## Useful Links
 
+- Guide: http://www.elasticsearch.org/guide/ (online docs)
 - http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser/
 - http://thomasardal.com/running-elasticsearch-on-linux-using-vagrant/
 - http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
 - http://exploringelasticsearch.com/overview.html
+- The ***Definitive Guide***: http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/
 
 
 ## Background Reading
