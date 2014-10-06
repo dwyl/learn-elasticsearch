@@ -7,8 +7,8 @@ var client = new elasticsearch.Client();
 // load-balanced between them using round-robin
 var client = elasticsearch.Client({
   hosts: [
-    'elasticsearch1:9200',
-    'elasticsearch2:9200'
+    '192.168.33.10:9200',
+    '192.168.33.10:9200'
   ]
 });
 
@@ -16,7 +16,7 @@ var client = elasticsearch.Client({
 // for the rest of the cluster right away, and
 // again every 5 minutes
 var client = elasticsearch.Client({
-  host: 'elasticsearch1:9200',
+  host: '192.168.33.10:9200',
   sniffOnStart: true,
   sniffInterval: 300000
 });
