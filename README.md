@@ -137,6 +137,15 @@ see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indic
 - **Testing ElasticSearch with Node.js**:
 http://faiq.me/testing-elasticsearch-node (use sinon)
 
+### ELK
+
+ELK is a Logging Stack comprised of ElasticSearch, LogStash & Kibana
+
+- http://www.elasticsearch.org/overview/elkdownloads/
+- http://www.elasticsearch.org/overview/kibana/
+- https://www.digitalocean.com/community/tutorials/how-to-use-logstash-and-kibana-to-centralize-and-visualize-logs-on-ubuntu-14-04
+
+
 ## History
 
 I chose elasticsearch to power the search for a project I lead at [News](http://news.co.uk/)
