@@ -26,6 +26,3 @@ var client = elasticsearch.Client({
 var client = new elasticsearch.Client({
   host: 'https://user:password@elasticsearch1/search?app=blog'
 });
-
-
-?style=flat

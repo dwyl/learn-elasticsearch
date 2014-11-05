@@ -14,7 +14,7 @@ provide this functionality and side-step having to run your own cluster
 of search servers...  But I suspect your project/customer wants/needs more
 control over the search experience and that's why you're reading this...
 
-## Why *Not* XYZ Database (that has Full-Text-Search) ?
+## Why *Not* XYZ Database (that *has* Full-Text-Search) ?
 
 Simple/Short answer: Pick the ***Best tool for the job***.
 
@@ -24,8 +24,8 @@ In the past I've used MongoDB's full-text-search (and even wrote a
   to *reasonable* success (Deal Searcher V.1 @Groupon!) and many of my
   *Rails* friends swear by
   [Postgres full-text-search](http://www.postgresql.org/docs/8.3/static/textsearch.html)
-  but none of these databases were designed *from scratch* to provide
-  scalable full-text search. So, if you want search, ***elasticsearch***!
+  but none of these databases were *designed from scratch* to provide
+  *scalable* full-text search. So, if you want search, ***elasticsearch***!
 
 ## What?
 
@@ -114,6 +114,8 @@ see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indic
 - http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_conventions_used_in_this_book.html
 
 
+
+
 ## Useful Links
 
 - Guide: http://www.elasticsearch.org/guide/ (online docs)
@@ -196,3 +198,5 @@ Elasticsearch WARNING: 2014-10-06T20:57:07Z
 Elasticsearch WARNING: 2014-10-06T20:57:07Z
   No living connections
 ```
+
+> Make sure you put the IP address of your server in your configuration.
