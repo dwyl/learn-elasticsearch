@@ -108,12 +108,12 @@ curl -XGET http://localhost:9200
 see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-status.html
 
 
-# > Pick up here:
+# > Continue:
 
-- http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch/
-- http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_conventions_used_in_this_book.html
-
-
+- [ ] http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch/
+- [x] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_conventions_used_in_this_book.html
+- [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
+- [ ] Video: http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1
 
 
 ## Useful Links
@@ -125,6 +125,7 @@ see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indic
 - http://exploringelasticsearch.com/overview.html
 - The ***Definitive Guide***: http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/
 
+- Getting started video: http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1
 
 ## Background Reading
 
