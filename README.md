@@ -110,11 +110,42 @@ see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indic
 
 # > Continue:
 
-- [ ] http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch/
-- [x] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_conventions_used_in_this_book.html
+- [ ] http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch/  
+- [x] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_conventions_used_in_this_book.html  
+- [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
 - [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
 - [ ] Video: http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1
 
+### Video Tutorial Code:
+
+If you want to follow along with the ElasticSearch getting started video:
+
+Insert a record:
+```sh
+curl -XPUT 'http://localhost:9200/vehicles/tv/one' -d '{"color":"green","driver":{"born":"1959-09-07","name":"Walter White"},"make":"Pontiac","model":"Aztek","value_usd":5000.0, "year":2003}'
+```
+
+Check the **mapping** for the index:
+```sh
+curl http://localhost:9200/vehicles/_mapping?pretty
+```
+
+To delete an index you accidentally created:
+```sh
+curl -XDELETE 'http://localhost:9200/vehicles/'
+```
+Search:
+```js
+curl 'localhost:9200/vehicles/tv/_search?q=_id:one&pretty'
+```
+Insert another document/record:
+```sh
+curl -XPUT 'http://localhost:9200/vehicles/tv/two' -d '{"color":"black","driver":{"born":"1949-01-09","name":"Michael Knight"},"make":"Pontiac","model":"Trans Am","value_usd":9999999.00, "year":1982}'
+```
+
+curl 'http://localhost:9200/vehicles/_search?q=pontiac&pretty'
+
+> 11:35
 
 ## Useful Links
 
