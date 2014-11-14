@@ -2,15 +2,19 @@
 $script = <<SCRIPT
 
 sudo -i
-## Install Node.js ##
-# https://github.com/joyent/node/wiki/installing-node.js-via-package-manager
-add-apt-repository ppa:chris-lea/node.js
 
 # update ubuntu (security etc.)
 apt-get update
 
 apt-get -y install g++ git git-core nodejs
 
+# nodejs
+apt-get -y install g++ git git-core nodejs npm
+# use https://github.com/visionmedia/n to get latest node+npm
+npm install n -g
+n stable
+node -v
+npm install nodemon -g
 
 # see: https://gist.github.com/wingdspur/2026107
 sudo apt-get install openjdk-7-jre-headless -y

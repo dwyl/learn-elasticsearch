@@ -9,7 +9,8 @@ var client = elasticsearch.Client({
   hosts: [
     '192.168.33.10:9200',
     '192.168.33.10:9200'
-  ]
+  ],
+  log: 'trace'
 });
 
 // Connect to the this host's cluster, sniff
@@ -23,6 +24,27 @@ var client = elasticsearch.Client({
 
 // Connect to this host using https, basic auth,
 // a path prefix, and static query string values
-var client = new elasticsearch.Client({
-  host: 'https://user:password@elasticsearch1/search?app=blog'
-});
+// var client = new elasticsearch.Client({
+//   host: 'https://user:password@elasticsearch1/search?app=blog'
+// });
+
+setTimeout(function(){
+  var D = new Date();
+  var date = parseInt(D.getTime()/1000);
+  client.create({
+        index: 'myindex',
+        type: 'mytype',
+        id: '1',
+        body: {
+            title:'Hello World',
+            tags: 'tag, me up',
+            published: true,
+            published_at: date,
+        }
+    }, function (err, resp) {
+      console.log(err);
+      console.log(resp)
+    });
+},2000);
+
+// curl -XDELETE 'http://localhost:9200/myindex/'

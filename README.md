@@ -156,8 +156,10 @@ curl 'http://localhost:9200/vehicles/_search?q=pontiac&pretty'
 - http://exploringelasticsearch.com/overview.html
 - The ***Definitive Guide***: http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/
 
-- Getting started video: http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1
-- Running ES in Travis-CI (build testing): http://docs.travis-ci.com/user/database-setup/#ElasticSearch
+- Getting started video:
+~~http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1~~
+https://www.youtube.com/watch?v=7FLXjgB0PQI (Clinton Gormley)
+- Running ES in Travis-CI (build testing): http://docs.travis-ci.com/user/database-setup/#ElasticSearce
 
 ## Background Reading
 
