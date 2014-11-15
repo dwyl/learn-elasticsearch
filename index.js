@@ -22,11 +22,6 @@ var client = elasticsearch.Client({
   sniffInterval: 300000
 });
 
-// Connect to this host using https, basic auth,
-// a path prefix, and static query string values
-// var client = new elasticsearch.Client({
-//   host: 'https://user:password@elasticsearch1/search?app=blog'
-// });
 
 setTimeout(function(){
   var D = new Date();

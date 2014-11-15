@@ -79,7 +79,7 @@ elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 
 - http://stackoverflow.com/questions/22850247/installing-elasticsearch-on-osx-mavericks
 
-#### Using ElasticSearch on *Any* OS with Vagrant
+#### Running ElasticSearch on *Any* OS with Vagrant
 
 If you are unfamiliar with vagrant please take a few minutes
 to read: https://github.com/nelsonic/learn-vagrant
@@ -145,7 +145,12 @@ curl -XPUT 'http://localhost:9200/vehicles/tv/two' -d '{"color":"black","driver"
 
 curl 'http://localhost:9200/vehicles/_search?q=pontiac&pretty'
 
-> 11:35
+### Updating a Record (Index)
+
+The Update API is quite well documented:
+http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-update.html
+
+
 
 ## Useful Links
 
@@ -156,6 +161,9 @@ curl 'http://localhost:9200/vehicles/_search?q=pontiac&pretty'
 - http://exploringelasticsearch.com/overview.html
 - The ***Definitive Guide***: http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/
 
+### Video
+
+- Elasticsearch from the bottom up: https://www.youtube.com/watch?v=PpX7J-G2PEo
 - Getting started video:
 ~~http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1~~
 https://www.youtube.com/watch?v=7FLXjgB0PQI (Clinton Gormley)
