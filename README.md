@@ -114,7 +114,8 @@ see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indic
 - [x] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_conventions_used_in_this_book.html  
 - [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
 - [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
-- [ ] Video: http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1
+- [ ] Video:
+http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1
 
 ### Video Tutorial Code:
 
@@ -166,7 +167,7 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-updat
 - Elasticsearch from the bottom up: https://www.youtube.com/watch?v=PpX7J-G2PEo
 - Getting started video:
 ~~http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1~~
-https://www.youtube.com/watch?v=7FLXjgB0PQI (Clinton Gormley)
+- Getting Down and Dirty with ElasticSearch: https://www.youtube.com/watch?v=7FLXjgB0PQI (Clinton Gormley)
 - Running ES in Travis-CI (build testing): http://docs.travis-ci.com/user/database-setup/#ElasticSearce
 
 ## Background Reading
