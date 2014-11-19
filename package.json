@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/nelsonic/learn-elasticsearch",
   "dependencies": {
-    "elasticsearch": "^2.4.1"
+    "elasticsearch": "^2.4.1",
+    "es": "^0.4.4",
+    "twitter": "^0.2.13"
   },
   "devDependencies": {
     "jshint": "^2.5.6",
