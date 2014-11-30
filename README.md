@@ -244,3 +244,21 @@ Elasticsearch WARNING: 2014-10-06T20:57:07Z
 ```
 
 > Make sure you put the IP address of your server in your configuration.
+
+### How do we Archive a Record?
+
+> need to research this
+
+### *Which* Node.js Module Should I Use for ElasticSearch?
+
+There are over a hundred modules for ElasticSearch on NPM
+see: http://node-modules.com/search?q=elasticsearch
+
+I tried:
+
+- ElasticSearch (the *official* module):
+https://github.com/elasticsearch/elasticsearch-js works(ish) but the
+[API is promise-based](http://www.elasticsearch.org/guide/en/elasticsearch/client/javascript-api/current/quick-start.html)
+which forces anyone using it to use promises. Not for me
+- Elastical: https://github.com/ramv/node-elastical/
+- Simple ElasticSearch: https://github.com/BryanDonovan/node-simple-elasticsearch
