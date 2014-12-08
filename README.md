@@ -251,14 +251,29 @@ Elasticsearch WARNING: 2014-10-06T20:57:07Z
 
 ### *Which* Node.js Module Should I Use for ElasticSearch?
 
-There are over a hundred modules for ElasticSearch on NPM
+There are over a hundred modules for ElasticSearch on NPM  
 see: http://node-modules.com/search?q=elasticsearch
 
-I tried:
+While writing this post I tried:
 
 - ElasticSearch (the *official* module):
 https://github.com/elasticsearch/elasticsearch-js works(ish) but the
 [API is promise-based](http://www.elasticsearch.org/guide/en/elasticsearch/client/javascript-api/current/quick-start.html)
 which forces anyone using it to use promises. Not for me
-- Elastical: https://github.com/ramv/node-elastical/
-- Simple ElasticSearch: https://github.com/BryanDonovan/node-simple-elasticsearch
+- Elastical: https://github.com/ramv/node-elastical
+simple API but the author describes it as "*not quite finished*"
+(and I have to agree). Documentation is good, and it only uses two
+3rd party dependencies (good news). Has not been updated in 7 months,
+could be worth submitting a PR to - except that there are a couple of
+open PRs: https://github.com/ramv/node-elastical/pulls which are being
+ignored by the module maintainer, never a good sign...
+- Simple ElasticSearch:
+https://github.com/BryanDonovan/node-simple-elasticsearch
+99% coverage, single dependency (qs); promising. but *master* build is faling
+[23 failing tests](https://travis-ci.org/BryanDonovan/node-simple-elasticsearch/builds/32594301)
+and it hasn't been updated in 4 months; generally low movement.
+- elastic.js https://github.com/fullscale/elastic.js
+JavaScript implementation of the elasticsearch Query DSL.
+High number of stars (410)
+But uses the ElasticSearch (*Official*) module (see above) which *forces*
+promises and uses *Grunt* where its *not required*.
