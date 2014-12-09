@@ -285,3 +285,13 @@ promises and uses *Grunt* where its *not required*.
 
 - Securing Your Elasticsearch Cluster
 https://www.found.no/foundation/elasticsearch-security/
+
+
+## *Hosted* ElasticSearch Providers
+
+If you prefer not to administer your own database/cluster
+there are a few services you can use:
+
+- Bonsai: https://app.bonsai.io/plans
+- Found: https://www.found.no/pricing/
+- QBox: https://qbox.io/pricing
