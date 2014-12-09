@@ -279,3 +279,9 @@ But uses the ElasticSearch (*Official*) module (see above) which *forces*
 promises and uses *Grunt* where its *not required*.
 - **es** https://github.com/ncb000gt/node-es the simplest one I found.
 99% code coverage. has not been updated in a while...
+
+
+## Security
+
+- Securing Your Elasticsearch Cluster
+https://www.found.no/foundation/elasticsearch-security/
