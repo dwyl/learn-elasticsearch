@@ -206,45 +206,7 @@ a *free* dev tier) and the quality of the search results is superb.
 
 ## Troubleshooting
 
-Tried to start elastic search with:
-```
-elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
-```
-But got the error:
-```
-Exception in thread "main" java.lang.UnsupportedClassVersionError: org/elasticsearch/bootstrap/Elasticsearch : Unsupported major.minor version 51.0
-```
-
-
-Tried `npm start` but got:
-
-```sh
- npm start
-
-> learn-elasticsearch@0.0.1 start /Users/n/code/learn-elasticsearch
-> node index.js
-
-Elasticsearch ERROR: 2014-10-06T20:57:07Z
-  Error: Request error, retrying -- getaddrinfo ENOTFOUND
-      at Log.error (/Users/n/code/learn-elasticsearch/node_modules/elasticsearch/src/lib/log.js:213:60)
-      at checkRespForFailure (/Users/n/code/learn-elasticsearch/node_modules/elasticsearch/src/lib/transport.js:194:18)
-      at HttpConnector.<anonymous> (/Users/n/code/learn-elasticsearch/node_modules/elasticsearch/src/lib/connectors/http.js:146:7)
-      at ClientRequest.bound (/Users/n/code/learn-elasticsearch/node_modules/elasticsearch/node_modules/lodash-node/modern/internals/baseBind.js:56:17)
-      at ClientRequest.emit (events.js:95:17)
-      at Socket.socketErrorListener (http.js:1551:9)
-      at Socket.emit (events.js:95:17)
-      at net.js:833:16
-      at process._tickCallback (node.js:419:13)
-
-Elasticsearch WARNING: 2014-10-06T20:57:07Z
-  Unable to revive connection: http://elasticsearch1:9200/
-
-Elasticsearch WARNING: 2014-10-06T20:57:07Z
-  No living connections
-```
-
-> Make sure you put the IP address of your server in your configuration.
-
+> see **ERRORS.md**
 
 ### How do we Archive a Record?
 
