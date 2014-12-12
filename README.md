@@ -245,6 +245,7 @@ Elasticsearch WARNING: 2014-10-06T20:57:07Z
 
 > Make sure you put the IP address of your server in your configuration.
 
+
 ### How do we Archive a Record?
 
 > need to research this
