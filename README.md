@@ -249,6 +249,14 @@ promises and uses *Grunt* where its *not required*.
 - Securing Your Elasticsearch Cluster
 https://www.found.no/foundation/elasticsearch-security/
 
+## Pitfals
+
+### The Split Brain Problem
+
+Where your cluster looses communication and you end up with two masters.
+
+- http://blog.trifork.com/2013/10/24/how-to-avoid-the-split-brain-problem-in-elasticsearch/comment-page-1/
+- https://github.com/elasticsearch/elasticsearch/issues/2488
 
 ## *Hosted* ElasticSearch Providers
 
