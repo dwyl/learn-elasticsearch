@@ -172,7 +172,8 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-updat
 
 ## Background Reading
 
-- Elasticsearch (wiki): http://en.wikipedia.org/wiki/Elasticsearch
+- Elasticsearch (wikipedia): http://en.wikipedia.org/wiki/Elasticsearch
+- Beginner's Guide to Elasticsearch: http://seanmcgary.com/posts/beginners-guide-to-elasticsearch
 - Faceted Search: http://en.wikipedia.org/wiki/Faceted_search
 - Solr vs Elasticsearch: http://stackoverflow.com/questions/10213009/solr-vs-elasticsearch
 - More detailed Solr vs ES: http://blog.sematext.com/2012/08/23/solr-vs-elasticsearch-part-1-overview
