@@ -245,6 +245,10 @@ promises and uses *Grunt* where its *not required*.
 99% code coverage. has not been updated in a while...
 
 
+## Graphical User Interfaces to ES
+
+http://www.elasticsearch.org/guide/en/elasticsearch/client/community/current/front-ends.html
+
 ## Security
 
 - Securing Your Elasticsearch Cluster

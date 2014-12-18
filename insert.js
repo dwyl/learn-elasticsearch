@@ -3,7 +3,6 @@ var http = require('http');
 var data = JSON.stringify({
   "text" :"everything is awesome"
 });
-
 // An object of options to indicate where to post to
 var post_options = {
     host: 'localhost',
@@ -15,7 +14,6 @@ var post_options = {
         'Content-Length': Buffer.byteLength(data)
     }
 };
-
 // Set up the request
 var post_req = http.request(post_options, function(res) {
     res.setEncoding('utf8');
@@ -23,11 +21,6 @@ var post_req = http.request(post_options, function(res) {
         console.log('Response: ' + chunk);
     });
 });
-
-console.log(data);
-console.log(' - - - - ');
-console.log(post_options);
-
 // post the data
 post_req.write( data );
 post_req.end();
