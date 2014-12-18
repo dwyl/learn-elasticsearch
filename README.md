@@ -161,6 +161,7 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-updat
 - http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
 - http://exploringelasticsearch.com/overview.html
 - The ***Definitive Guide***: http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/
+- ***Exploring ElasticSearch*** by Andrew Cholakian: http://exploringelasticsearch.com/
 
 ### Video
 
