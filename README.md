@@ -116,6 +116,7 @@ see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indic
 - [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
 - [ ] Video:
 http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1
+- [ ] https://github.com/elasticsearch/elasticsearch-definitive-guide/tree/master/050_Search
 
 ### Video Tutorial Code:
 
