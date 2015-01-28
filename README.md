@@ -214,7 +214,7 @@ a *free* dev tier) and the quality of the search results is superb.
 
 > need to research this
 
-### *Which* Node.js Module Should I Use for ElasticSearch?
+## *Which* Node.js Module Should I Use for ElasticSearch?
 
 There are over a hundred modules for ElasticSearch on NPM  
 see: http://node-modules.com/search?q=elasticsearch
@@ -245,6 +245,19 @@ promises and uses *Grunt* where its *not required*.
 - **es** https://github.com/ncb000gt/node-es the simplest one I found.
 99% code coverage. has not been updated in a while...
 
+
+### I Wrote a *Better* One!
+
+I got frustrated using the other modules,
+so I wrote a better one: https://github.com/nelsonic/esta
+
+#### How is it "Better"?
+
++ [x] Focus on simplicity
++ [x] Readable code
++ [x] Zero Dependencies (never worry about upgrading to the latest version of node or the module)
++ [x] 100% Test Coverage
++ [x] Optional Backup of Data if FS available
 
 ## Graphical User Interfaces to ES
 
