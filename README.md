@@ -286,3 +286,8 @@ there are a few services you can use:
 - Bonsai: https://app.bonsai.io/plans
 - Found: https://www.found.no/pricing/
 - QBox: https://qbox.io/pricing
+
+## Host your own ElasticSearch
+
+- Tips for running on AWS:
+http://www.elasticsearch.com/webinars/elasticsearch-on-aws/
