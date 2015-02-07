@@ -17,7 +17,7 @@
 10 error You can get their info via:
 10 error     npm owner ls learn-elasticsearch
 10 error There is likely additional logging output above.
-11 error System Darwin 13.4.0
+11 error System Darwin 14.0.0
 12 error command "node" "/usr/local/bin/npm" "run" "test"
 13 error cwd /Users/n/code/learn-elasticsearch
 14 error node -v v0.10.32
