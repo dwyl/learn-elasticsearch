@@ -19,9 +19,9 @@ of*) search server(s)...  But I suspect your project/customer wants/needs more c
 Simple/Short answer: Pick the ***Best tool for the job***.
 
 In the past we've used MongoDB's full-text-search (*and even wrote a*
-  [***tutorial***](https://github.com/ideaq/mongo-search) *for it*!) We've used
+  [***tutorial***](https://github.com/ideaq/mongo-search) *for it*!),
   [MySQL full-text-search](http://dev.mysql.com/doc/refman/5.0/en/fulltext-search.html)
-  to *reasonable* success (Deal Searcher V.1 @Groupon) and many of my
+  to *reasonable* success (Deal Searcher V.1 @Groupon) and many of our
   *Rails* friends swear by
   [Postgres full-text-search](http://www.postgresql.org/docs/8.3/static/textsearch.html)
   but *none* of these databases were ***designed from scratch*** to provide
@@ -43,35 +43,62 @@ i.e. *awesomeness in a box*!
 
 ![whaaat](http://i.imgur.com/JeOf6lZ.png)
 
-If you're feeling *bewildered* by that ***buzzword fest***,
+Feeling *bewildered* by that ***buzzword fest***?
 let's break it down:
 
-+ ***Real-Time***: a system in which input data is processed within milliseconds so that it is available virtually ***immediately*** as feedback to the process from which it is coming - i.e. things happen without a noticeable delay
-+ "***Near***" ***Real-Time***: means you can insert a record into the "index"
++ ***Real-Time***: a system in which input data is processed within milliseconds so that it is available virtually ***immediately*** as feedback to the process from which it is coming - i.e. things happen without a noticeable delay. An example of "*real time*" is *instant messaging*.  
+see: https://en.wikipedia.org/wiki/Real-time_computing
+
++ "***Near***" *Real-Time*: means there is a small (*but noticeable*) delay. You can insert/update a record in the "index"
 and it will be *searchable* in ***less than a second***.
 (It is *not immediate*, but its close, so they say "*Near*" Real Time)
+And example of "*near real time*" is email (*not quite instant*)
+
++ **Full-Text** Search: means when you search through the records in an ElasticSearch
+database (cluster) your search term(s) will be searched for everywhere in the desired field(s) of the document.
+For example: Imagine you have a blog and each blog post has: Title, Intro, Body and Comments section.
+When searching for a particular string e.g: "this is awesomeness", you could search in **all-the-fields**
+which could return a result in one of the comments.  
+read more: https://en.wikipedia.org/wiki/Full_text_search
+
++ **Distributed** means you can have several ElasticSearch *nodes* in different data centers or regions
+to improve retrieval reliability.  
+see: https://en.wikipedia.org/?title=Distributed_computing
+
+
++ Having a **REST API** means you can access your ElasticSearch cluster using standard HTTP requests.
+˜
 
 ## How?
 
-> http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser
-> http://www.elasticsearch.org/guide/en/elasticsearch/client/javascript-api/current/quick-start.html
+There are a few options for running ElasticSearch:  
+**A**. Boot a Virtual Machine with ES and all its dependencies (*using Vagrant*)  
+**B**. Install the "*binary*" package for your Operating System.  
+**C**. Don't install *anything* and just use a *free heroku* instance! (*See: __Heroku__ section below*)
 
 
 ### Download & Install
 
-Given that ElasticSearch ***requires Java 7***, I've created a Vagrant box
-to consistently boot ES on any OS (using a VM!)
+ElasticSearch ***requires Java 7***, so if you want to install ElasticSearch ("*natively*") on your local machine you will need to have Java running...
+We prefer *not* to have Java running on our *personal* machines
+(because its [*chronically insecure*](http://krebsonsecurity.com/2014/04/critical-java-update-plugs-37-security-holes/))
+so we created a Vagrant box to consistently boot ES (using a VM!) ... see below.
 
-#### Vagrant + Ubuntu
+#### Running ElasticSearch on *Any Operating System* with Vagrant
 
-If you aren't using Vagrant, go read my vagrant tutorial *now*:
-https://github.com/nelsonic/learn-vagrant
+If you aren't using Vagrant, read our Vagrant tutorial *now*:
+https://github.com/docdis/learn-vagrant
+
+#### Ubuntu
 
 - Install ElasticSearch on Ubuntu:
 https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-on-an-ubuntu-vps
 
 
 #### Mac
+
+If you don't mind having Java running on your Mac,
+you can use [*Homebrew*](http://brew.sh/) to install ES:
 
 ```sh
 brew install elasticsearch
@@ -90,16 +117,16 @@ Or, if you don't want/need launchctl, you can just run:
 elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 ```
 
-- http://stackoverflow.com/questions/22850247/installing-elasticsearch-on-osx-mavericks
+- More info on installation options:
+http://stackoverflow.com/questions/22850247/installing-elasticsearch-on-osx-mavericks
 
-#### Running ElasticSearch on *Any* OS with Vagrant
-
-If you are unfamiliar with vagrant please take a few minutes
-to read: https://github.com/nelsonic/learn-vagrant
+#### Windows
 
 
 
-- http://www.elasticsearch.org/overview/elkdownloads/
+
+### Inserting a record using cURL (REST API)
+
 
 ```sh
 curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{"user":"kimchy","post_date":"2009-11-15T14:12:12","message" : "trying out Elasticsearch"}'
@@ -198,6 +225,9 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-updat
 - Decent (but old) tutorial: http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch
 - **Testing ElasticSearch with Node.js**:
 http://faiq.me/testing-elasticsearch-node (use sinon)
++ http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser
++ http://www.elasticsearch.org/guide/en/elasticsearch/client/javascript-api/current/quick-start.html
+
 
 ### ELK
 
@@ -210,6 +240,8 @@ ELK is a Logging Stack comprised of ElasticSearch, LogStash & Kibana
 - Flume: http://flume.apache.org/
 - Fluentd: http://www.fluentd.org/
 
+
+# tl;dr
 
 ## History
 
@@ -260,10 +292,10 @@ promises and uses *Grunt* where its *not required*.
 99% code coverage. has not been updated in a while...
 
 
-### I Wrote a *Better* One!
+### We Wrote a *Better* One!
 
 I got frustrated using the other modules,
-so I wrote a better one: https://github.com/nelsonic/esta
+so I wrote a better one: https://github.com/dwyl/esta
 
 #### How is it "Better"?
 
@@ -271,7 +303,7 @@ so I wrote a better one: https://github.com/nelsonic/esta
 + [x] Readable code
 + [x] Zero Dependencies (never worry about upgrading to the latest version of node or the module)
 + [x] 100% Test Coverage
-+ [x] Optional Backup of Data if FS available
++ [x] Optional Backup of Data
 
 ## Graphical User Interfaces to ES
 
