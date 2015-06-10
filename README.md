@@ -6,28 +6,30 @@ to power a great search experience for your project/product/website.
 
 ## Why?
 
-For anything more than a basic website, ***people expect*** to be
-able to ***search*** through your content (blog posts, recipes, products, reviews, etc.)
+For anything more than a *basic* website, ***people*** (visiting/using your
+  site/app) ***expect*** to be able to ***search*** through your content
+(blog posts, recipes, products, reviews, etc.)
 
 You *could* use [**google custom search**](https://www.google.com/cse) to
-provide this functionality and side-step having to run your own cluster
-of search servers...  But I suspect your project/customer wants/needs more
-control over the search experience and that's why you're reading this...
+provide this functionality and side-step having to run your own (*cluster
+of*) search server(s)...  But I suspect your project/customer wants/needs more control over the search experience and that's why you're reading this intro?
 
-## Why *Not* XYZ Database (that *has* Full-Text-Search) ?
+### Why *Not* XYZ Database (that *has* Full-Text-Search) ?
 
 Simple/Short answer: Pick the ***Best tool for the job***.
 
-In the past I've used MongoDB's full-text-search (and even wrote a
-  [tutorial](https://github.com/ideaq/mongo-search) for it!) I've used
+In the past we've used MongoDB's full-text-search (*and even wrote a*
+  [***tutorial***](https://github.com/ideaq/mongo-search) *for it*!) We've used
   [MySQL full-text-search](http://dev.mysql.com/doc/refman/5.0/en/fulltext-search.html)
-  to *reasonable* success (Deal Searcher V.1 @Groupon!) and many of my
+  to *reasonable* success (Deal Searcher V.1 @Groupon) and many of my
   *Rails* friends swear by
   [Postgres full-text-search](http://www.postgresql.org/docs/8.3/static/textsearch.html)
-  but none of these databases were *designed from scratch* to provide
-  *scalable* full-text search. So, if you want search, ***elasticsearch***!
+  but *none* of these databases were ***designed from scratch*** to provide
+  ***scalable full-text search***. So, if you want search, ***Elasticsearch***!
 
 ## What?
+
+![buzz explains elasticsearch](http://i.imgur.com/HfuxgaM.png)
 
 Elasticsearch is a search server based on
 [Lucene](http://en.wikipedia.org/wiki/Lucene).
@@ -37,6 +39,17 @@ i.e. *awesomeness in a box*!
 
 > Read more: http://www.elasticsearch.org/overview/elasticsearch/
 
+### Whhaaaat...?
+
+![whaaat](http://i.imgur.com/JeOf6lZ.png)
+
+If you're feeling *bewildered* by that ***buzzword fest***,
+let's break it down:
+
++ ***Real-Time***: a system in which input data is processed within milliseconds so that it is available virtually ***immediately*** as feedback to the process from which it is coming - i.e. things happen without a noticeable delay
++ "***Near***" ***Real-Time***: means you can insert a record into the "index"
+and it will be *searchable* in ***less than a second***.
+(It is *not immediate*, but its close, so they say "*Near*" Real Time)
 
 ## How?
 
