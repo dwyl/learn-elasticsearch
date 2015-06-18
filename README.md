@@ -89,6 +89,22 @@ so we created a Vagrant box to consistently boot ES (using a VM!) ... see below.
 If you aren't using Vagrant, read our Vagrant tutorial *now*:
 https://github.com/docdis/learn-vagrant
 
+If you *are* already using Vagrant, simply clone this repo:
+
+```sh
+git clone git@github.com:docdis/learn-elasticsearch.git && cd learn-elasticsearch
+```
+
+Then run this command (*in your terminal*):
+
+```sh
+vagrant up
+```
+
+*Note: expect the installation to take a few minutes, go for a walk,
+or skip to the Tutorial section below and start watching the video.*
+
+
 #### Ubuntu
 
 - Install ElasticSearch on Ubuntu:
@@ -122,45 +138,39 @@ http://stackoverflow.com/questions/22850247/installing-elasticsearch-on-osx-mave
 
 #### Windows
 
+see: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-service-win.html  
+(*but, seriously, try Vagrant!*)
 
 
+### ElasticSearch Server Status
+
+To confirm that everything is working as expected, open your terminal and run the following command:
+
+```
+curl -XGET http://localhost:9200
+```
+
+You should expect to see something similar to:
+
+![elasticsearch-status-response-1 6](https://cloud.githubusercontent.com/assets/194400/8233220/f03d7714-15cc-11e5-9e6d-0f47036b89ef.png)
+
+
+## Tutorial
+
+Once you have installed ElasticSearch (*following the instructions above*)
+
+> Visit: https://www.elastic.co/webinars/getting-started-with-elasticsearch
+(*register using fake data if you want to avoid email spam*) and watch the video.
 
 ### Inserting a record using cURL (REST API)
-
 
 ```sh
 curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{"user":"kimchy","post_date":"2009-11-15T14:12:12","message" : "trying out Elasticsearch"}'
 ```
 
-
-### Install (Node Module)
-
-```sh
-npm install elasticsearch --save
-```
-
-
-## ElasticSearch Server Status
-
-```
-curl -XGET http://localhost:9200
-```
-see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-status.html
-
-
-# > Continue:
-
-- [ ] http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch/  
-- [x] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_conventions_used_in_this_book.html  
-- [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
-- [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
-- [ ] Video:
-http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1
-- [ ] https://github.com/elasticsearch/elasticsearch-definitive-guide/tree/master/050_Search
-
 ### Video Tutorial Code:
 
-If you want to follow along with the ElasticSearch getting started video:
+If you want to following along with the ElasticSearch getting started video:
 
 Insert a record:
 ```sh
@@ -197,6 +207,8 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-updat
 ## Useful Links
 
 - Guide: http://www.elasticsearch.org/guide/ (online docs)
+- Talking to ES: http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
+- Searching: https://github.com/elasticsearch/elasticsearch-definitive-guide/tree/master/050_Search
 - http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser/
 - http://thomasardal.com/running-elasticsearch-on-linux-using-vagrant/
 - http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
@@ -265,7 +277,7 @@ a *free* dev tier) and the quality of the search results is superb.
 There are over a hundred modules for ElasticSearch on NPM  
 see: http://node-modules.com/search?q=elasticsearch
 
-While writing this post I tried:
+While writing this post we tried the following modules:
 
 - ElasticSearch (the *official* module):
 https://github.com/elasticsearch/elasticsearch-js works(ish) but the
@@ -292,10 +304,10 @@ promises and uses *Grunt* where its *not required*.
 99% code coverage. has not been updated in a while...
 
 
-### We Wrote a *Better* One!
+### We Wrote a *Simpler* Node.js Module!
 
-I got frustrated using the other modules,
-so I wrote a better one: https://github.com/dwyl/esta
+We got frustrated using the other modules,
+so we wrote a better one: https://github.com/dwyl/esta
 
 #### How is it "Better"?
 
@@ -314,7 +326,7 @@ http://www.elasticsearch.org/guide/en/elasticsearch/client/community/current/fro
 - Securing Your Elasticsearch Cluster
 https://www.found.no/foundation/elasticsearch-security/
 
-## Pitfals
+## Pitfalls
 
 ### The Split Brain Problem
 
