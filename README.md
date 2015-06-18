@@ -6,28 +6,30 @@ to power a great search experience for your project/product/website.
 
 ## Why?
 
-For anything more than a basic website, ***people expect*** to be
-able to ***search*** through your content (blog posts, recipes, products, reviews, etc.)
+For anything more than a *basic* website, ***people*** (visiting/using your
+  site/app) ***expect*** to be able to ***search*** through your content
+(blog posts, recipes, products, reviews, etc.)
 
 You *could* use [**google custom search**](https://www.google.com/cse) to
-provide this functionality and side-step having to run your own cluster
-of search servers...  But I suspect your project/customer wants/needs more
-control over the search experience and that's why you're reading this...
+provide this functionality and side-step having to run your own (*cluster
+of*) search server(s)...  But I suspect your project/customer wants/needs more control over the search experience and that's why you're reading this intro?
 
-## Why *Not* XYZ Database (that *has* Full-Text-Search) ?
+### Why *Not* XYZ Database (that *has* Full-Text-Search) ?
 
 Simple/Short answer: Pick the ***Best tool for the job***.
 
-In the past I've used MongoDB's full-text-search (and even wrote a
-  [tutorial](https://github.com/ideaq/mongo-search) for it!) I've used
+In the past we've used MongoDB's full-text-search (*and even wrote a*
+  [***tutorial***](https://github.com/ideaq/mongo-search) *for it*!),
   [MySQL full-text-search](http://dev.mysql.com/doc/refman/5.0/en/fulltext-search.html)
-  to *reasonable* success (Deal Searcher V.1 @Groupon!) and many of my
+  to *reasonable* success (Deal Searcher V.1 @Groupon) and many of our
   *Rails* friends swear by
   [Postgres full-text-search](http://www.postgresql.org/docs/8.3/static/textsearch.html)
-  but none of these databases were *designed from scratch* to provide
-  *scalable* full-text search. So, if you want search, ***elasticsearch***!
+  but *none* of these databases were ***designed from scratch*** to provide
+  ***scalable full-text search***. So, if you want search, ***Elasticsearch***!
 
 ## What?
+
+![buzz explains elasticsearch](http://i.imgur.com/HfuxgaM.png)
 
 Elasticsearch is a search server based on
 [Lucene](http://en.wikipedia.org/wiki/Lucene).
@@ -37,28 +39,82 @@ i.e. *awesomeness in a box*!
 
 > Read more: http://www.elasticsearch.org/overview/elasticsearch/
 
+### Whhaaaat...?
+
+![whaaat](http://i.imgur.com/JeOf6lZ.png)
+
+Feeling *bewildered* by that ***buzzword fest***?
+let's break it down:
+
++ ***Real-Time***: a system in which input data is processed within milliseconds so that it is available virtually ***immediately*** as feedback to the process from which it is coming - i.e. things happen without a noticeable delay. An example of "*real time*" is *instant messaging*.  
+see: https://en.wikipedia.org/wiki/Real-time_computing
+
++ "***Near***" *Real-Time*: means there is a small (*but noticeable*) delay. You can insert/update a record in the "index"
+and it will be *searchable* in ***less than a second***.
+(It is *not immediate*, but its close, so they say "*Near*" Real Time)
+And example of "*near real time*" is email (*not quite instant*)
+
++ **Full-Text** Search: means when you search through the records in an ElasticSearch
+database (cluster) your search term(s) will be searched for everywhere in the desired field(s) of the document.
+For example: Imagine you have a blog and each blog post has: Title, Intro, Body and Comments section.
+When searching for a particular string e.g: "this is awesomeness", you could search in **all-the-fields**
+which could return a result in one of the comments.  
+read more: https://en.wikipedia.org/wiki/Full_text_search
+
++ **Distributed** means you can have several ElasticSearch *nodes* in different data centers or regions
+to improve retrieval reliability.  
+see: https://en.wikipedia.org/?title=Distributed_computing
+
+
++ Having a **REST API** means you can access your ElasticSearch cluster using standard HTTP requests.
+˜
 
 ## How?
 
-> http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser
-> http://www.elasticsearch.org/guide/en/elasticsearch/client/javascript-api/current/quick-start.html
+There are a few options for running ElasticSearch:  
+**A**. Boot a Virtual Machine with ES and all its dependencies (*using Vagrant*)  
+**B**. Install the "*binary*" package for your Operating System.  
+**C**. Don't install *anything* and just use a *free heroku* instance! (*See: __Heroku__ section below*)
 
 
 ### Download & Install
 
-Given that ElasticSearch ***requires Java 7***, I've created a Vagrant box
-to consistently boot ES on any OS (using a VM!)
+ElasticSearch ***requires Java 7***, so if you want to install ElasticSearch ("*natively*") on your local machine you will need to have Java running...
+We prefer *not* to have Java running on our *personal* machines
+(because its [*chronically insecure*](http://krebsonsecurity.com/2014/04/critical-java-update-plugs-37-security-holes/))
+so we created a Vagrant box to consistently boot ES (using a VM!) ... see below.
 
-#### Vagrant + Ubuntu
+#### Running ElasticSearch on *Any Operating System* with Vagrant
 
-If you aren't using Vagrant, go read my vagrant tutorial *now*:
-https://github.com/nelsonic/learn-vagrant
+If you aren't using Vagrant, read our Vagrant tutorial *now*:
+https://github.com/docdis/learn-vagrant
+
+If you *are* already using Vagrant, simply clone this repo:
+
+```sh
+git clone git@github.com:docdis/learn-elasticsearch.git && cd learn-elasticsearch
+```
+
+Then run this command (*in your terminal*):
+
+```sh
+vagrant up
+```
+
+*Note: expect the installation to take a few minutes, go for a walk,
+or skip to the Tutorial section below and start watching the video.*
+
+
+#### Ubuntu
 
 - Install ElasticSearch on Ubuntu:
 https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-on-an-ubuntu-vps
 
 
 #### Mac
+
+If you don't mind having Java running on your Mac,
+you can use [*Homebrew*](http://brew.sh/) to install ES:
 
 ```sh
 brew install elasticsearch
@@ -77,50 +133,44 @@ Or, if you don't want/need launchctl, you can just run:
 elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
 ```
 
-- http://stackoverflow.com/questions/22850247/installing-elasticsearch-on-osx-mavericks
+- More info on installation options:
+http://stackoverflow.com/questions/22850247/installing-elasticsearch-on-osx-mavericks
 
-#### Running ElasticSearch on *Any* OS with Vagrant
+#### Windows
 
-If you are unfamiliar with vagrant please take a few minutes
-to read: https://github.com/nelsonic/learn-vagrant
+see: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-service-win.html  
+(*but, seriously, try Vagrant!*)
 
 
+### ElasticSearch Server Status
 
-- http://www.elasticsearch.org/overview/elkdownloads/
+To confirm that everything is working as expected, open your terminal and run the following command:
+
+```
+curl -XGET http://localhost:9200
+```
+
+You should expect to see something similar to:
+
+![elasticsearch-status-response-1 6](https://cloud.githubusercontent.com/assets/194400/8233220/f03d7714-15cc-11e5-9e6d-0f47036b89ef.png)
+
+
+## Tutorial
+
+Once you have installed ElasticSearch (*following the instructions above*)
+
+> Visit: https://www.elastic.co/webinars/getting-started-with-elasticsearch
+(*register using fake data if you want to avoid email spam*) and watch the video.
+
+### Inserting a record using cURL (REST API)
 
 ```sh
 curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '{"user":"kimchy","post_date":"2009-11-15T14:12:12","message" : "trying out Elasticsearch"}'
 ```
 
-
-### Install (Node Module)
-
-```sh
-npm install elasticsearch --save
-```
-
-
-## ElasticSearch Server Status
-
-```
-curl -XGET http://localhost:9200
-```
-see: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/indices-status.html
-
-
-# > Continue:
-
-- [ ] http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch/  
-- [x] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_conventions_used_in_this_book.html  
-- [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
-- [ ] http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
-- [ ] Video:
-http://www.elasticsearch.org/webinars/getting-started-with-elasticsearch/?watch=1
-- [ ] https://github.com/elasticsearch/elasticsearch-definitive-guide/tree/master/050_Search
-
 ### Video Tutorial Code:
 
-If you want to follow along with the ElasticSearch getting started video:
+If you want to following along with the ElasticSearch getting started video:
 
 Insert a record:
 ```sh
@@ -157,6 +207,8 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-updat
 ## Useful Links
 
 - Guide: http://www.elasticsearch.org/guide/ (online docs)
+- Talking to ES: http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html
+- Searching: https://github.com/elasticsearch/elasticsearch-definitive-guide/tree/master/050_Search
 - http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser/
 - http://thomasardal.com/running-elasticsearch-on-linux-using-vagrant/
 - http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
@@ -185,6 +237,9 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-updat
 - Decent (but old) tutorial: http://www.sitepoint.com/building-recipe-search-site-angular-elasticsearch
 - **Testing ElasticSearch with Node.js**:
 http://faiq.me/testing-elasticsearch-node (use sinon)
++ http://www.elasticsearch.org/blog/client-for-node-js-and-the-browser
++ http://www.elasticsearch.org/guide/en/elasticsearch/client/javascript-api/current/quick-start.html
+
 
 ### ELK
 
@@ -197,6 +252,8 @@ ELK is a Logging Stack comprised of ElasticSearch, LogStash & Kibana
 - Flume: http://flume.apache.org/
 - Fluentd: http://www.fluentd.org/
 
+
+# tl;dr
 
 ## History
 
@@ -220,7 +277,7 @@ a *free* dev tier) and the quality of the search results is superb.
 There are over a hundred modules for ElasticSearch on NPM  
 see: http://node-modules.com/search?q=elasticsearch
 
-While writing this post I tried:
+While writing this post we tried the following modules:
 
 - ElasticSearch (the *official* module):
 https://github.com/elasticsearch/elasticsearch-js works(ish) but the
@@ -247,10 +304,10 @@ promises and uses *Grunt* where its *not required*.
 99% code coverage. has not been updated in a while...
 
 
-### I Wrote a *Better* One!
+### We Wrote a *Simpler* Node.js Module!
 
-I got frustrated using the other modules,
-so I wrote a better one: https://github.com/nelsonic/esta
+We got frustrated using the other modules,
+so we wrote a better one: https://github.com/dwyl/esta
 
 #### How is it "Better"?
 
@@ -258,7 +315,7 @@ so I wrote a better one: https://github.com/nelsonic/esta
 + [x] Readable code
 + [x] Zero Dependencies (never worry about upgrading to the latest version of node or the module)
 + [x] 100% Test Coverage
-+ [x] Optional Backup of Data if FS available
++ [x] Optional Backup of Data
 
 ## Graphical User Interfaces to ES
 
@@ -269,7 +326,7 @@ http://www.elasticsearch.org/guide/en/elasticsearch/client/community/current/fro
 - Securing Your Elasticsearch Cluster
 https://www.found.no/foundation/elasticsearch-security/
 
-## Pitfals
+## Pitfalls
 
 ### The Split Brain Problem
 
