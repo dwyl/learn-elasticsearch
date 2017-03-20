@@ -202,6 +202,21 @@ curl 'http://localhost:9200/vehicles/_search?q=pontiac&pretty'
 The Update API is quite well documented:
 http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs-update.html
 
+## Node.js
+
+see: `/nodejs` folder for sample scripts you can run in node.js
+
+
+## Elixir
+
+This section is about using ElasticSearch within the `Elixir` programming language.
+If you are new to `Elixir`,
+see: [github.com/dwyl/**learn-elixir**](https://github.com/dwyl/learn-elixir/)
+ (_you're in for a treat!_)
+
+
+
+
 
 
 ## Useful Links
