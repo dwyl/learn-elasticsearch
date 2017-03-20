@@ -11,6 +11,7 @@ defmodule ElasticTest do
     {:ok, status, result} = get("/my_index/users/1")
     expected = %{email: "jane@example.com", name: "Jane"}
     # IO.inspect result._source
+    assert status == 200
     assert result._source == expected
   end
 end

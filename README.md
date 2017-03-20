@@ -1,5 +1,5 @@
 ![elasticsearch logo](http://i.imgur.com/xl1xgjm.png)
-
+[![Build Status](https://travis-ci.org/dwyl/learn-elasticsearch.svg?branch=master)](https://travis-ci.org/dwyl/learn-elasticsearch)
 
 In the next 30 mins you will learn how to use ElasticSearch
 to power a great search experience for your project/product/website.
@@ -214,7 +214,26 @@ If you are new to `Elixir`,
 see: [github.com/dwyl/**learn-elixir**](https://github.com/dwyl/learn-elixir/)
  (_you're in for a treat!_)
 
+Once you know a bit about Elixir, writing to an ElasticSearch cluster
+is quite straight forward thanks to @'s module `tirexs`
+see: https://github.com/Zatvobor/tirexs#getting-started
 
+We've included a simple Write/Read example in
+`/elixir/lib/elastic.ex` and `/elixir/lib/elastic_test.ex`
+
+To try it out on your local computer, simply run the following command(s):
+
+```
+git clone git@github.com:dwyl/learn-elasticsearch.git
+cd learn-elasticsearch
+mix deps.get
+mix test
+```
+> Tip: you can copy paste the whole block and run all the commands in order.
+
+
++ Extended example:
+https://gist.github.com/oivoodoo/845b857b28e24bc1acdc13c18e1b32d6
 
 
 
