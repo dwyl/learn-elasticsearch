@@ -7,6 +7,12 @@ defmodule Elixir.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: [
+       "coveralls": :test,
+       "coveralls.detail": :test,
+       "coveralls.post": :test,
+       "coveralls.html": :test],
      deps: deps()]
   end
 
@@ -27,6 +33,7 @@ defmodule Elixir.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
+    {:excoveralls, "~> 0.6", only: :test},
     [{:tirexs, "~> 0.8"}] # see: github.com/Zatvobor/tirexs#getting-started
   end
 end
