@@ -14,7 +14,7 @@ defmodule Elixir.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :tirexs]] # see: https://github.com/Zatvobor/tirexs
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,6 @@ defmodule Elixir.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:tirexs, "~> 0.8"}] # see: github.com/Zatvobor/tirexs#getting-started
   end
 end

@@ -1,0 +1,3 @@
+%{"exjsx": {:hex, :exjsx, "3.2.1", "1bc5bf1e4fd249104178f0885030bcd75a4526f4d2a1e976f4b428d347614f0f", [:mix], [{:jsx, "~> 2.8.0", [hex: :jsx, optional: false]}]},
+  "jsx": {:hex, :jsx, "2.8.2", "7acc7d785b5abe8a6e9adbde926a24e481f29956dd8b4df49e3e4e7bcc92a018", [:mix, :rebar3], []},
+  "tirexs": {:hex, :tirexs, "0.8.13", "71c6832cecdb7e2675e9d1c13effc101ad553b60316a90042d3062b1ea2ce3b3", [:mix], [{:exjsx, "~> 3.2.0", [hex: :exjsx, optional: false]}]}}
