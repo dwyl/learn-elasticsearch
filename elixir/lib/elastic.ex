@@ -1,0 +1,3 @@
+defmodule Elastic do
+
+end
