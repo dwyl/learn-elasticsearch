@@ -6,6 +6,7 @@ services:
   - elasticsearch
 env:
   - MIX_ENV=test
+before_install: cd /home/travis/build/dwyl/learn-elasticsearch/elixir && pwd
 script:
   - mix do deps.get, compile --warnings-as-errors, coveralls.json
 after_success:
