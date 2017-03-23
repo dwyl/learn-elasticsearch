@@ -215,7 +215,7 @@ see: [github.com/dwyl/**learn-elixir**](https://github.com/dwyl/learn-elixir/)
  (_you're in for a treat!_)
 
 Once you know a bit about Elixir, writing to an ElasticSearch cluster
-is quite straight forward thanks to @'s module `tirexs`
+is quite straight forward thanks to @Zatvobor's module `tirexs`
 see: https://github.com/Zatvobor/tirexs#getting-started
 
 We've included a simple Write/Read example in
