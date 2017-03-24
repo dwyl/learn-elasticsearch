@@ -1,0 +1,17 @@
+# see: github.com/dwyl/learn-travis
+language: elixir
+elixir:
+  - 1.4.1
+services:
+  - elasticsearch
+env:
+  - MIX_ENV=test
+before_install: cd /home/travis/build/dwyl/learn-elasticsearch/elixir && pwd
+script:
+  - mix do deps.get, compile --warnings-as-errors, coveralls.json
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+cache:
+  directories:
+    - _build
+    - deps
