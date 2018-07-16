@@ -79,7 +79,7 @@ There are a few options for running ElasticSearch:
 
 ### Download & Install
 
-ElasticSearch ***requires Java 7***, so if you want to install ElasticSearch ("*natively*") on your local machine you will need to have Java running...
+ElasticSearch ***requires Java 8***, so if you want to install ElasticSearch ("*natively*") on your local machine you will need to have Java running...
 We prefer *not* to have Java running on our *personal* machines
 (because its [*chronically insecure*](http://krebsonsecurity.com/2014/04/critical-java-update-plugs-37-security-holes/))
 so we created a Vagrant box to consistently boot ES (using a VM!) ... see below.
