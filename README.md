@@ -375,8 +375,8 @@ If you prefer not to administer your own database/cluster
 there are a few services you can use:
 
 - Amzon: https://aws.amazon.com/elasticsearch-service/
-- Bonsai: https://app.bonsai.io/plans
-- Found: https://www.found.no/pricing/
+- Bonsai: https://bonsai.io/plans
+- Elastic: https://www.elastic.co/pricing/
 - QBox: https://qbox.io/pricing
 
 ## Host your own ElasticSearch
